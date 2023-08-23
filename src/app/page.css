@@ -1,0 +1,56 @@
+header {
+    font-size : 30px;
+    text-align: left;
+    margin-left :  calc(100vw / 20) ;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding : 2% ;
+  }
+
+
+  a img {
+    fill: white;
+    width: 20px;
+    height: 20px;
+    margin-left: 10px;
+  }
+  
+  main {
+    
+  }
+
+.title{
+    font-size : 30px;
+    text-align: center;
+    padding: 20px;
+    
+}
+
+  .blog {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    gap: calc(100vw / 12);
+    margin-left :  calc(100vw / 15) ;
+ 
+    
+  }
+  
+  .box {
+    width: calc(100vw / 5);
+    height: calc(100vw / 5);
+    background-color: white;
+  }
+  
+  footer {
+    text-align: right;
+    color : #fff;
+    margin : calc(100vw / 15);
+  }
+  
+  .next {
+    
+    cursor: pointer;
+  }
+  
