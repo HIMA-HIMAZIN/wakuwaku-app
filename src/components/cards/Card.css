@@ -1,13 +1,13 @@
 article {
-  @apply rounded-md bg-slate-200 shadow-md;
+  @apply m-5 rounded-md bg-inherit shadow-md;
 }
 
 article > .thumbnail {
-  @apply relative w-full rounded-t-md bg-slate-300;
+  @apply relative w-full rounded-t-md;
   aspect-ratio: 16 / 10;
 }
 
-article > .thumbnail > img {
+article > .thumbnail > .link > img {
   @apply rounded-t-md object-cover; /* object-cover を object-contain にしてみよう */
 }
 
@@ -21,4 +21,8 @@ article h2 {
 
 article > section > .description {
   @apply line-clamp-2 text-gray-600;
+}
+
+article > section > .date {
+  @apply text-right  text-sm text-gray-500;
 }

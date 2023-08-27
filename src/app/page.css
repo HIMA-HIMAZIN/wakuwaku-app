@@ -1,0 +1,23 @@
+.box {
+    @apply bg-gradient-to-t from-slate-200 to-slate-300;
+  }
+  .header {
+    @apply flex flex-row items-end border-b-4 border-current box-decoration-slice p-7 text-white shadow-sm;
+  }
+  
+  .header > .title {
+    @apply pr-8 text-5xl font-bold drop-shadow-xl;
+  }
+  
+  .header > .subtitle {
+    @apply text-2xl drop-shadow-xl;
+  }
+  
+  .main > .compo {
+    @apply m-10 grid auto-rows-fr grid-cols-1 gap-5 md:grid-cols-2;
+  }
+  
+  .footer {
+    @apply flex flex-row items-center justify-center p-5;
+  }
+  

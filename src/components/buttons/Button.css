@@ -1,0 +1,15 @@
+.blue {
+    background-color: #0077FF;
+}
+
+.red {
+    background-color: #FF0000;
+}
+
+.aqua {
+    background-color: #00FFFF;
+}
+
+.god {
+    @apply bg-gradient-to-r from-cyan-500 to-blue-500
+}
