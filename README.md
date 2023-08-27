@@ -187,9 +187,75 @@ fillを書いて親要素の幅に合わせようとしたら、画面全体多�
 ## 2023 / 8 / 24
 
 ### 進捗 :
-
+なし
 ### 質問１：
 
 ### 解答１：
 
-### 原因１：
+###　得た知識：
+```ts
+<Img
+    className="compo-image"
+    src="/isat.jpg"
+    fill
+    alt="Document"
+/>
+```
+ではなく[プレースホルダー](https://wa3.i-3-i.info/word118.html)を意識して
+```ts
+<div className="thumbnail">
+    <Image src={image} alt="" fill sizes="100vw" priority />
+</div>
+```
+以上のように書く。
+
+```ts
+priority
+```
+
+priorityはBoolean型です。  
+true の場合、画像は優先度が高いとみvなされ、プリロードされます。  
+falseの場合、遅延読み込みは自動的に無効になります。  
+デフォルトはfalseです。
+
+h1やh2タグはNext.jsの場合文字の大きさは変わらない。
+ではなぜh1,h2タグを使うのかと言うと、多くのサイトの場合見出しのデザインはサイト内全て共通として表示するのでglobals.cssでh1,h2に関しての設定をするためである。
+
+## キーワード
+
+### priority　
+priorityはBoolean型です。  
+true の場合、画像は優先度が高いとみvなされ、プリロードされます。  
+falseの場合、遅延読み込みは自動的に無効になります。  
+デフォルトはfalseです。
+```ts
+priority
+```
+以上を追加するとpriority= trueと同じ意味になる。
+### preload(プリロード)
+先取り、先読み
+
+### "next/image"
+next/image はサーバーサイドで画像のサイズを最適化してくれるもの。  
+癖が強い（詳細は不明）
+
+### "use client"
+use clientは、クライアントの処理行いたい場合のみ使用  
+※極力使用しないように頑張る！！！
+
+### LCP 
+Largest Contentful Paintの略で、ページをいくつかのブロック要素で分けた中で最も読み込み容量が大きい要素のこと
+
+### "line-clamp-2"
+コンテンツの行数を制限します。今回の場合は二行に制限したいのでline-clamp-2と書く。
+
+### "section"
+
+### "Layout / page / template の関係性
+
+![alt text](/public/IMG_0085.png)
+
+Layoutは合流地点
+TemplateはPageに共通している部分　ヘッター/フッター
+Pageはそれぞれ違う表示に関して。
+

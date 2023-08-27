@@ -1,0 +1,24 @@
+article {
+  @apply rounded-md bg-slate-200 shadow-md;
+}
+
+article > .thumbnail {
+  @apply relative w-full rounded-t-md bg-slate-300;
+  aspect-ratio: 16 / 10;
+}
+
+article > .thumbnail > img {
+  @apply rounded-t-md object-cover; /* object-cover を object-contain にしてみよう */
+}
+
+article > section {
+  @apply flex flex-col space-y-4 p-4;
+}
+
+article h2 {
+  @apply text-xl font-semibold text-gray-800;
+}
+
+article > section > .description {
+  @apply line-clamp-2 text-gray-600;
+}
