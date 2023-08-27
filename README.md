@@ -250,6 +250,7 @@ Largest Contentful Paintの略で、ページをいくつかのブロック要�
 コンテンツの行数を制限します。今回の場合は二行に制限したいのでline-clamp-2と書く。
 
 ### "section"
+まとめる時使う
 
 ### "Layout / page / template の関係性
 
@@ -259,3 +260,43 @@ Layoutは合流地点
 TemplateはPageに共通している部分　ヘッター/フッター
 Pageはそれぞれ違う表示に関して。
 
+
+### "fetch"
+アクセスをする
+
+### "await"
+非同期処理　通常並列処理をしているが、awaitを書くと指定した処理を待たせることができる。
+親要素には必ず"async"を記入する必要がある。
+
+### "json()"
+括弧の中のものを以下のようにして渡す。
+ある意味テンプレートのようなものだと思えばいい
+![alt text](/public/json.png)
+
+" || "
+```ts
+thumbnail={post.thumbnail || "mine.jpg"}
+```
+[演算子について](https://zenn.dev/fujii0112/articles/78fe69c4c30731)
+
+文字列が入れば文字列が優先される。
+```ts
+post.thumbnail
+```
+がnull、何も入っていなかった場合に"mine.jpg"が表示される。
+いわゆるデフォルトの値を設定できる。
+
+### "Promise"
+非同期処理
+```ts
+async function getPosts(): Promise<Post[]> {
+  const res = await fetch(`${baseUrl}/api/v0/posts`, { cache: "no-store" });
+  if (!res.ok) throw new Error(`${res.status}`);
+  return res.json();
+}
+```
+以上のコードを簡単にすると
+```ts
+sync function getPosts(): Promise<Post[]> {}
+```
+{}内の処理が終わるまで待つ。と言うこと。
