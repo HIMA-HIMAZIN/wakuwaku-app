@@ -1,4 +1,7 @@
 # 作ってワクワク Blog  日記
+## 重要知識
+githubで自分のブランチを選択、そこからsyncforkを押してupdateするその後github desktopで更新。
+
 ## 2023/8/22
 
 ### 進捗  :
@@ -220,9 +223,98 @@ falseの場合、遅延読み込みは自動的に無効になります。
 
 h1やh2タグはNext.jsの場合文字の大きさは変わらない。
 ではなぜh1,h2タグを使うのかと言うと、多くのサイトの場合見出しのデザインはサイト内全て共通として表示するのでglobals.cssでh1,h2に関しての設定をするためである。
+## 2023 / 8 / 25
 
-## キーワード
+### 進捗 :
+コードの解読
+## 2023 / 8 / 26
 
+### 進捗 :
+コード解読に関しての知識の共有
+### 得た知識
+
+.env.local ファイルは、Next.js プロジェクトなどの環境で使用される場合に、クライアントサイドには公開されてはいけない機密情報（API キー、トークン、パスワードなど）を含む環境変数を設定するためのファイル
+
+utilsフォルダではfoldUUIDを16進数にしたり、文字変更をして短くしている。
+
+types.supabase.d.tsでは以下のようにタイプ宣言をしている。
+しかしこれらは予想でしかなく、入れ物をこちら側で作っていると言うことを念頭に置きながら思考する必要がある。
+```ts
+interface Post {
+    id: string;
+    updated_at: string;
+    title: string;
+    content: string;
+    thumbnail: string;
+  }
+  
+  export type { Post };
+  
+```
+
+## 2023 / 8 / 26
+
+### 進捗 :
+解読をしたコードを元にアレンジをし、各CSSが何に対応しているかの確認。
+
+## 2023 / 8 / 27
+
+### 進捗 :
+cssの変数設定に関してと、今後のための「ここに行く」コンポーネントの下書き作成
+
+## 2023 / 8 / 27
+
+### 進捗 :
+dialoginfoコンポーネントの修正追加
+
+### 質問　　：
+コンポーネント表示時にコンポーネント以外を灰色にする方法
+
+思考回路　：
+
+コンポーネント全体の背景を灰色にした結果コンポーネント内に色が反映されてしまう。
+
+### 解答　：
+```ts
+<div className={styles.screen}>
+  <div className={styles.container}>
+  <div className={styles.main}>{children}</div>
+</div>
+</div>
+```
+```scss
+
+.screen {
+  @apply h-full w-screen backdrop-brightness-75  flex  m-auto inset-0 fixed;
+}
+
+.container {
+  max-width: 22rem;
+  border: 5px solid var.$blue;
+
+  @apply inset-0 h-fit m-auto p-5
+    rounded-3xl backdrop-blur bg-white;
+}
+
+```
+
+以上のように"backdrop-brightness-75"これ使えば！OK!
+
+relativeとabsoluteを忘れずに意識することが重要。
+
+## 2023 / 8 / 28
+
+### 進捗 :
+![alt text](/public/nannno.jpeg)
+
+### 反省 :
+
+知識がないと調べるにも調べるためのキーワードが分からない。
+キーワードを思いついても記事がない。
+フルコミットをするよりも、午前から午後までドキュメントを読んだり、それを元に下書きをWAKUWAKU-APPで作って、夜に下書きを元に本番を書いた方がいい説ある。今からドキュメントや記事を読んで明日から、コンポを作ってみる。毎日久木君に質問をするべきではない、シンプルに説明が分かりやすいから怠惰になってしまう。
+エラーも読めるようにならなければならない。
+
+## キーワード　：
 ### priority　
 priorityはBoolean型です。  
 true の場合、画像は優先度が高いとみvなされ、プリロードされます。  
@@ -300,3 +392,46 @@ async function getPosts(): Promise<Post[]> {
 sync function getPosts(): Promise<Post[]> {}
 ```
 {}内の処理が終わるまで待つ。と言うこと。
+
+### [React Hookに関して](https://qiita.com/seira/items/2fbad56e84bda885c84c)
+基礎知識
+
+### [Primsaとは](https://zenn.dev/smish0000/articles/f1a6f463417b65)
+
+- オープンソースのORM(Object-relational mapping)
+- Node上のアプリケーションで直接DBに接続し、クエリー発行が可能
+- RDB周りの処理をより簡単に行えるようにし、開発者の生産性を向上させることを目的に開発
+- Next.jsアプリケーションでDBを扱う際に特に有用
+- Schemaファイルから型情報が生成され、クエリ結果がタイプセーフになる
+
+[詳しくは](https://zenn.dev/smish0000/articles/f1a6f463417b65)
+
+### クエリーとは
+そもそものSQLとクエリの違い
+- SQL：データベースを操作するための言語
+- クエリ：SQLを実行したときにデータベースに送る命令文
+
+具体例　：　日本語で「処理しなさい」と命令をした場合の、命令文である「処理しなさい」という言葉がクエリ、日本語のことがSQLである
+
+### クエリするとは
+ソフトウェアに対するデータの問い合わせや要求などを一定の形式で文字に表現すること
+
+### tailwindCSSに関しての捉え方
+
+上がcss 下がtailwindCSS　
+
+```scss
+.box{
+  .bg-white{
+    background-color: white ;
+  }
+}
+```
+```scss
+.box{
+    @apply bg-white  
+}
+```
+
+これ同じことやってます。
+
