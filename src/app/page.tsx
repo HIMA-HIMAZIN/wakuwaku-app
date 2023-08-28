@@ -27,7 +27,8 @@ export default async function Home() {
             />
           ))}
         </div>
-        <div className="go">
+        <div className= " grid grid-cols-2 ">
+          <Button id="" text="キープ" color="red"/>
           <Button id="" text="行く！！！！" color="god"/>
         </div>
       </main>

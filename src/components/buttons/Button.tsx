@@ -10,11 +10,10 @@ type ButtonProps = {
 
 export function Button({ id, text , color }: ButtonProps) {
     return (
-      <article className ={color} >
-        <div className="button" >
-            <Link href={`/${id}`}>{text}</Link>
-        </div>
-      </article>
+   
+        <article className = {color} >  
+          <Link className = "text" href={`/${id}`}>{text}</Link>
+        </article>
     );
 };
 
