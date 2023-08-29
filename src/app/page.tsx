@@ -2,7 +2,8 @@ import { Card } from "@/components/cards/Card";
 import {Button} from "@/components/buttons/Button";
 import { getPosts } from "@/hooks/supabase";
 import { foldUUID } from "@/utils/converter";
-import { CustomizedDialogs } from "@/components/customization/Customization";
+import  { CustomizedDialogs } from "@/components/customization/Customization";
+import { BasicButtons} from "@/components/uibutton/uibutton";
 import type { Post } from "@/types/supabase";
 import "./page.css";
 
@@ -28,10 +29,13 @@ export default async function Home() {
             />
           ))}
         </div>
-        <div className= " grid grid-cols-2 ">
+        <div className= " flex m-10 grid-cols-2 gap-5 ">
           <Button id="" text="キープ" color="red"/>
           <Button id="" text="行く！！！！" color="god"/>
+        </div>
+        <div>
           <CustomizedDialogs/>
+          <BasicButtons/>
         </div>
       </main>
       <footer className="footer">

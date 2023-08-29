@@ -494,3 +494,7 @@ NEXT_PUBLIC_BASE_URL=http://localhost:3000
 次に以下のターミナルに表示されているurlと.env.developementで設定しているurlが一致しているかを調べる。
 
 ![url](/public/url.png)
+
+###　"use client"
+
+[コンポーネントには付けよう！！](https://github.com/styled-components/styled-components/issues/4025)

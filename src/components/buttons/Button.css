@@ -1,20 +1,26 @@
 .blue {
-    background-color: #0077FF;
-    @apply my-5 mx-5  ;
+    background-color: #0077FF ;
+    
+    @apply flex justify-center items-center;
+    
 }
 
 .red {
-    background-color: #FF0000;
-    @apply my-5 mx-5  ;
+    background-color:#FF0000 ;
+    
+    @apply flex justify-center items-center;
 }
 
 .aqua {
-    background-color: #00FFFF;
-    @apply my-5 mx-5  ;
+    background-color: #00FFFF ;
+    
+    @apply flex justify-center items-center ;
+   
 }
 
 .god {
-    @apply bg-gradient-to-r from-cyan-500 to-blue-500 my-5 mx-5 ;
+    @apply bg-gradient-to-r from-cyan-500 to-blue-500 flex justify-center items-center ;
+
 }
 
 .text {

@@ -4,7 +4,7 @@ article {
 
 article > .thumbnail {
   @apply relative w-full rounded-t-md;
-  aspect-ratio: 16 / 10;
+  aspect-ratio: 16 / 10; 
 }
 
 article > .thumbnail > .link > img {
@@ -16,7 +16,11 @@ article > section {
 }
 
 article h2 {
-  @apply text-xl font-semibold text-gray-800;
+  @apply text-xl font-semibold text-gray-800 flex items-center;
+}
+
+.bookmark {
+  @apply top-0 right-0 m-2;
 }
 
 article > section > .description {
