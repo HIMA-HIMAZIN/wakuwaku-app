@@ -1,6 +1,8 @@
+"use client";
 import Link from "next/link";
 import "./Button.css";
 import { type } from "os";
+import * as React from 'react';
 
 type ButtonProps = {
     id: string;
@@ -16,4 +18,3 @@ export function Button({ id, text , color }: ButtonProps) {
         </article>
     );
 };
-

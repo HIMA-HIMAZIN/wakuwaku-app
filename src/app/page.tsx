@@ -2,6 +2,7 @@ import { Card } from "@/components/cards/Card";
 import {Button} from "@/components/buttons/Button";
 import { getPosts } from "@/hooks/supabase";
 import { foldUUID } from "@/utils/converter";
+import { CustomizedDialogs } from "@/components/customization/Customization";
 import type { Post } from "@/types/supabase";
 import "./page.css";
 
@@ -30,6 +31,7 @@ export default async function Home() {
         <div className= " grid grid-cols-2 ">
           <Button id="" text="キープ" color="red"/>
           <Button id="" text="行く！！！！" color="god"/>
+          <CustomizedDialogs/>
         </div>
       </main>
       <footer className="footer">
